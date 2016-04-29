@@ -203,7 +203,7 @@ public class MenjacnicaGUI extends JFrame {
 		if (table == null) {
 			table = new JTable();
 			table.setFillsViewportHeight(true);
-			MenjacnicaTableModel model = new MenjacnicaTableModel();
+			MenjacnicaTableModel model = new MenjacnicaTableModel(null);
 			table.setModel(new DefaultTableModel(new Object[][] {},
 					new String[] { "Sifra", "Skraceni naziv", "Prodajni", "Srednji", "Kupovni", "Naziv" }) {
 				boolean[] columnEditables = new boolean[] { false, false, false, false, false, false };
@@ -237,6 +237,11 @@ public class MenjacnicaGUI extends JFrame {
 	private JButton getBtnDodajKurs() {
 		if (btnDodajKurs == null) {
 			btnDodajKurs = new JButton("Dodaj kurs");
+			btnDodajKurs.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					GUIKontroler.otvoriProzorZaDodavanje();
+				}
+			});
 			btnDodajKurs.setPreferredSize(new Dimension(100, 25));
 		}
 		return btnDodajKurs;
@@ -295,6 +300,11 @@ public class MenjacnicaGUI extends JFrame {
 	private JMenuItem getMntmDodajKurs() {
 		if (mntmDodajKurs == null) {
 			mntmDodajKurs = new JMenuItem("Dodaj kurs");
+			mntmDodajKurs.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					GUIKontroler.otvoriProzorZaDodavanje();
+				}
+			});
 		}
 		return mntmDodajKurs;
 	}
@@ -316,5 +326,13 @@ public class MenjacnicaGUI extends JFrame {
 	public void ispisiStatus(String poruka) {
 		// TODO Auto-generated method stub
 		textArea.setText(textArea.getText() + "\n" + poruka);
+	}
+
+	public void osveziTabelu() {
+		// TODO Auto-generated method stub
+		MenjacnicaTableModel model = new MenjacnicaTableModel(GUIKontroler.kursevi);
+		model.fireTableDataChanged();
+		table.setModel(model);
+		
 	}
 }

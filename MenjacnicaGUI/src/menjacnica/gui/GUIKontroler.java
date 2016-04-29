@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.util.LinkedList;
 
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
@@ -12,10 +13,14 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import menjacnica.Kurs;
+import menjacnica.model.MenjacnicaTableModel;
+
 public class GUIKontroler extends JFrame {
 
 	private JPanel contentPane;
 	private static MenjacnicaGUI menjacnica;
+	public static LinkedList<Kurs> kursevi = new LinkedList<>();
 	/**
 	 * Launch the application.
 	 */
@@ -71,6 +76,21 @@ public class GUIKontroler extends JFrame {
 			System.exit(0);
 		}
 	}
+
+	public static void dodajUTabelu() {
+		// TODO Auto-generated method stub
+		menjacnica.osveziTabelu();
+		
+	}
+
+	public static void otvoriProzorZaDodavanje() {
+		// TODO Auto-generated method stub
+		DodajKursGUI dodaj = new DodajKursGUI();
+		dodaj.setVisible(true);
+		dodaj.setLocationRelativeTo(null);
+	}
+
+	
 	
 	
 
