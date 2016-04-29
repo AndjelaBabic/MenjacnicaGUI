@@ -2,6 +2,7 @@ package menjacnica.gui;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.JobAttributes;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -77,8 +78,9 @@ public class GUIKontroler extends JFrame {
 		}
 	}
 
-	public static void dodajUTabelu() {
+	public static void dodajUTabelu(Kurs k) {
 		// TODO Auto-generated method stub
+		menjacnica.ispisiStatus(k.toString());
 		menjacnica.osveziTabelu();
 		
 	}
@@ -88,6 +90,17 @@ public class GUIKontroler extends JFrame {
 		DodajKursGUI dodaj = new DodajKursGUI();
 		dodaj.setVisible(true);
 		dodaj.setLocationRelativeTo(null);
+	}
+
+	public static void obrisiRed(int red) {
+		// TODO Auto-generated method stub
+		int vrednost = JOptionPane.showConfirmDialog(menjacnica.getParent(), "Da li ste sigurni da zelite da obrisete ovaj red?",
+				"Birsanje", JOptionPane.YES_NO_OPTION);
+		if(vrednost == JOptionPane.YES_OPTION){
+			kursevi.remove(red);
+			menjacnica.osveziTabelu();
+			menjacnica.ispisiStatus("Izbrisan je red sa indeksom: "+red);
+		}
 	}
 
 	

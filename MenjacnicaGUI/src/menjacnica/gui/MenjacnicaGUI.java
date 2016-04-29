@@ -252,6 +252,13 @@ public class MenjacnicaGUI extends JFrame {
 			btnIzbrisiKurs = new JButton("Izbrisi kurs");
 			btnIzbrisiKurs.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
+					int red = table.getSelectedRow();
+					if(red==-1){
+						JOptionPane.showMessageDialog(getParent(), "Morate izabrate red koji zelite da obrisete!",
+								"Brisanje", JOptionPane.INFORMATION_MESSAGE);
+					} else{
+						GUIKontroler.obrisiRed(red);
+					}
 				}
 			});
 			btnIzbrisiKurs.setPreferredSize(new Dimension(100, 25));

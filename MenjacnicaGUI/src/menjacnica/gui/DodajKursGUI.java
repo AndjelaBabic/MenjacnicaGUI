@@ -218,9 +218,8 @@ public class DodajKursGUI extends JFrame {
 					k.setKupovni(jtfKupovni.getText());
 					k.setSrednji(jtfSrednji.getText());
 					MenjacnicaGUI m = new MenjacnicaGUI();
-					m.ispisiStatus(k.toString());
 					GUIKontroler.kursevi.add(k);
-					GUIKontroler.dodajUTabelu();
+					GUIKontroler.dodajUTabelu(k);
 					dispose();
 				}
 			});
