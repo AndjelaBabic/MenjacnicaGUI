@@ -22,6 +22,11 @@ public class GUIKontroler extends JFrame {
 	private JPanel contentPane;
 	private static MenjacnicaGUI menjacnica;
 	public static LinkedList<Kurs> kursevi = new LinkedList<>();
+	
+	public static MenjacnicaGUI getMenjacnica() {
+		return menjacnica;
+	}
+
 	/**
 	 * Launch the application.
 	 */
@@ -103,8 +108,12 @@ public class GUIKontroler extends JFrame {
 		}
 	}
 
-	
-	
-	
+	public static void otvoriProzorZaZamenu() {
+		// TODO Auto-generated method stub
+		IzvrsiZamenuGUI zameni = new IzvrsiZamenuGUI();
+		zameni.setVisible(true);
+		zameni.setLocationRelativeTo(null);
+	}
+
 
 }
