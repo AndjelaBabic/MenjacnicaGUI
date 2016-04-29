@@ -105,6 +105,9 @@ public class GUIKontroler extends JFrame {
 			kursevi.remove(red);
 			menjacnica.osveziTabelu();
 			menjacnica.ispisiStatus("Izbrisan je red sa indeksom: "+red);
+			JOptionPane.showMessageDialog(menjacnica.getParent(), "Uspesno izbrisan red: "+red+"!", "Obavestenje", JOptionPane.INFORMATION_MESSAGE);
+		} else{
+			JOptionPane.showMessageDialog(menjacnica.getParent(), "Doslo je do greske prilikom brisanja!", "Obavestenje", JOptionPane.ERROR_MESSAGE);
 		}
 	}
 

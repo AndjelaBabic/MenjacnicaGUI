@@ -312,6 +312,17 @@ public class MenjacnicaGUI extends JFrame {
 	private JMenuItem getMntmIzbrisiKurs() {
 		if (mntmIzbrisiKurs == null) {
 			mntmIzbrisiKurs = new JMenuItem("Izbrisi kurs");
+			mntmIzbrisiKurs.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					int red = table.getSelectedRow();
+					if(red==-1){
+						JOptionPane.showMessageDialog(getParent(), "Morate izabrate red koji zelite da obrisete!",
+								"Brisanje", JOptionPane.INFORMATION_MESSAGE);
+					} else{
+						GUIKontroler.obrisiRed(red);
+					}
+				}
+			});
 		}
 		return mntmIzbrisiKurs;
 	}
