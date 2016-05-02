@@ -81,6 +81,7 @@ public class GUIKontroler extends JFrame {
 		if(vrednost == JOptionPane.YES_OPTION){
 			System.exit(0);
 		}
+		
 	}
 
 	public static void dodajUTabelu(Kurs k) {
@@ -102,13 +103,15 @@ public class GUIKontroler extends JFrame {
 		int vrednost = JOptionPane.showConfirmDialog(menjacnica.getParent(), "Da li ste sigurni da zelite da obrisete ovaj red?",
 				"Birsanje", JOptionPane.YES_NO_OPTION);
 		if(vrednost == JOptionPane.YES_OPTION){
+			try{
 			kursevi.remove(red);
 			menjacnica.osveziTabelu();
 			menjacnica.ispisiStatus("Izbrisan je red sa indeksom: "+red);
 			JOptionPane.showMessageDialog(menjacnica.getParent(), "Uspesno izbrisan red: "+red+"!", "Obavestenje", JOptionPane.INFORMATION_MESSAGE);
-		} else{
-			JOptionPane.showMessageDialog(menjacnica.getParent(), "Doslo je do greske prilikom brisanja!", "Obavestenje", JOptionPane.ERROR_MESSAGE);
-		}
+			} catch(Exception e){
+				JOptionPane.showMessageDialog(menjacnica.getParent(), "Doslo je do greske prilikom brisanja!", "Obavestenje", JOptionPane.ERROR_MESSAGE);
+			}
+		} 
 	}
 
 	public static void otvoriProzorZaZamenu() {
