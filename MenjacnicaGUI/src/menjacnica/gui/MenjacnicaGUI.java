@@ -74,7 +74,7 @@ public class MenjacnicaGUI extends JFrame {
 		setTitle("Menjacnica");
 		setIconImage(
 				Toolkit.getDefaultToolkit().getImage(MenjacnicaGUI.class.getResource("/ikonice/dollarsign_gold.png")));
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		setJMenuBar(getMenuBar_1());
 		contentPane = new JPanel();

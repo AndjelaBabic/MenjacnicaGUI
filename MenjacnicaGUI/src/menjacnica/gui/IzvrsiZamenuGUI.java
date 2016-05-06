@@ -52,15 +52,9 @@ public class IzvrsiZamenuGUI extends JFrame {
 	 * Create the frame.
 	 */
 	public IzvrsiZamenuGUI() {
-		addWindowListener(new WindowAdapter() {
-			@Override
-			public void windowClosing(WindowEvent arg0) {
-				dispose();
-			}
-		});
 		setResizable(false);
 		setTitle("Izvrsi zamenu");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 430, 315);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
